@@ -75,6 +75,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  eventmachine (~> 1.2)
   jekyll (~> 4.2.0)
   jekyll-feed (~> 0.12)
   minima (~> 2.5)

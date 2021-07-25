@@ -1,0 +1,36 @@
+---
+layout: default
+style: collection.css
+---
+
+<div class="collection-background"></div>
+{% assign collection = site.collections | find: "label", page.collection %}
+<h1>{{collection.title}}</h1>
+<div class="collection-wrapper">
+    <div class="overflow">
+        {% assign documents = collection.docs | where: "list", true %}
+        {% for document in documents %}
+        <div style="--animation-order: {{forloop.index0}};" class="document">
+            <div style="--thumbnail: url('{{" /assets/images/" | append: document.thumbnail | relative_url}}');"
+                class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="info">
+                <h6>{{document.title}}</h6>
+                <div>
+                    <i class="material-icons">add</i>
+                    <span>See Comments (***)</span>
+                </div>
+            </div>
+            <div class="document-overlay">
+                <div class="intro">
+                    <div style="--thumbnail: url('{{" /assets/images/" | append: document.thumbnail | relative_url}}');"
+                        class="mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title mdl-card--expand"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

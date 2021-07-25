@@ -53,3 +53,25 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+defaults:
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      list: true
+      thumbnail: "under-construction.jpg"
+  - scope:
+      path: ""
+    values:
+      layout: "post"
+
+collections:
+  features:
+    output: true
+    title: Features
+    navigation: true
+  articles:
+    output: true
+    title: Articles
+    navigation: true
