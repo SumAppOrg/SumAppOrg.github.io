@@ -1,6 +1,8 @@
 .portfolio-header {
     position: relative;
     background-image: url(/assets/images/header-bg.jpg);
+    background-size: cover;
+    background-position: center;
     .mdl-layout__header-row {
         padding: 0;
         -webkit-justify-content: center;
@@ -14,11 +16,11 @@
         font-size: 14px;
         text-align: center;
         font-weight: 300;
-        color: grey;
+        color: white;
     }
     .mdl-navigation__link {
         text-decoration: none;
-        color: grey;
+        color: white;
     }
 }
 
