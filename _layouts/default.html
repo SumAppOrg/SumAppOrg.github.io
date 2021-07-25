@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
 {%- include head.html -%}
 
 <body>
-    {%- include navigation.html -%}
-    {{ content }}
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        {%- include header.html -%}
+        <main class="mdl-layout__content">
+            {{ content }}
+            {%- include footer.html -%}
+        </main>
+    </div>
 </body>
 
 </html>
