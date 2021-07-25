@@ -6,4 +6,5 @@ style: home.css
 {% assign home_collections = site.collections %}
 {% for collection in home_collections %}
 {{collection.label}}
+{%- include preview.html collection=collection -%}
 {% endfor %}
