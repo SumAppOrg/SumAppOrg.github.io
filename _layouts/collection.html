@@ -3,34 +3,24 @@ layout: default
 style: collection.css
 ---
 
-<div class="collection-background"></div>
 {% assign collection = site.collections | find: "label", page.collection %}
 <h1>{{collection.title}}</h1>
-<div class="collection-wrapper">
-    <div class="overflow">
-        {% assign documents = collection.docs | where: "list", true %}
+<div class="mdl-grid portfolio-max-width">
+    {% assign documents = collection.docs | where: "list", true %}
         {% for document in documents %}
-        <div style="--animation-order: {{forloop.index0}};" class="document">
-            <div style="--thumbnail: url('{{" /assets/images/" | append: document.thumbnail | relative_url}}');"
-                class="mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title mdl-card--expand"></div>
-            </div>
-            <div class="info">
-                <h6>{{document.title}}</h6>
-                <div>
-                    <i class="material-icons">add</i>
-                    <span>See Comments (***)</span>
-                </div>
-            </div>
-            <div class="document-overlay">
-                <div class="intro">
-                    <div style="--thumbnail: url('{{" /assets/images/" | append: document.thumbnail | relative_url}}');"
-                        class="mdl-card mdl-shadow--2dp">
-                        <div class="mdl-card__title mdl-card--expand"></div>
-                    </div>
-                </div>
-            </div>
+    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+            <img class="article-image" src="{{"/assets/images/" | append: document.thumbnail | relative_url}}" border="0" alt="">
         </div>
-        {% endfor %}
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">{{document.title}}</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="portfolio-example01.html">Read more</a>
+        </div>
     </div>
+    {% endfor %}
 </div>
