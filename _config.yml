@@ -61,11 +61,11 @@ defaults:
       type: "articles"
     values:
       list: true
-      thumbnail: "under-construction.jpg"
+      thumbnail: "/assets/images/under-construction.jpg"
   - scope:
       path: ""
     values:
-      layout: "post"
+      layout: "default"
 
 collections:
   features:

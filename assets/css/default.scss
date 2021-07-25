@@ -1,0 +1,32 @@
+---
+---
+
+@import "base";
+@import "breakpoints";
+
+.mdl-card__media {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.default-content {
+    padding: 32px;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.hbox {
+    display: grid;
+    grid-template-columns: var(--style);
+    @include Handset {
+        grid-template-columns: 1fr;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

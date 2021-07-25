@@ -1,13 +1,8 @@
 ---
 ---
 
-@import "default";
+@import "base";
 @import "breakpoints";
-
-.portfolio-max-width {
-    max-width: 900px;
-    margin: auto;
-}
 
 .portfolio-card {
     .mdl-card__title {
