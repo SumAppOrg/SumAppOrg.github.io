@@ -1,6 +1,9 @@
 ---
-layout: default
+layout: base
 style: home.css
 ---
 
-{{ content }}
+{% assign home_collections = site.collections %}
+{% for collection in home_collections %}
+{{collection.label}}
+{% endfor %}
