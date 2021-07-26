@@ -2,3 +2,11 @@
 ---
 
 @import "base";
+@import "preview";
+
+.home-intro {
+    display: flex;
+    flex-direction: column;
+    padding: 64px;
+    background-color: hsl(255, 50%, 90%);
+}

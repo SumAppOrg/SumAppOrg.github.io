@@ -72,7 +72,9 @@ collections:
     output: true
     title: Features
     navigation: true
+    home: true
   articles:
     output: true
     title: Articles
     navigation: true
+    home: true

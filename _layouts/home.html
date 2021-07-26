@@ -2,9 +2,10 @@
 layout: base
 style: home.css
 ---
-
-{% assign home_collections = site.collections %}
+<div class="mdl-cell mdl-cell--12-col home-intro">
+    {{content}}
+</div>
+{% assign home_collections = site.collections | where: "home", true %}
 {% for collection in home_collections %}
-{{collection.label}}
-{%- include preview.html collection=collection -%}
+{%- include preview.html collection=collection offset=forloop.index0 length=forloop.length -%}
 {% endfor %}
