@@ -1,21 +1,22 @@
-<div class="mdl-cell mdl-cell--12-col preview-collection"
-    style="--offset: {{include.offset}}; --length: {{include.length}};">
-    <div class="collection">
-        <h2>{{include.collection.title}}</h2>
-        <span>{{include.collection.title}}</span>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-            href="{{include.collection.label | relative_url}}">
-            Read more...
-        </button>
+<div class="mdl-cell mdl-cell--12-col preview-collection">
+    <div class="left">
+        <div class="collection">
+            <h2>{{include.collection.title}}</h2>
+            <span>{{include.collection.title}}</span>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                onclick="location.href='{{include.collection.label | relative_url}}';">
+                Read more...
+            </button>
+        </div>
     </div>
-    <div class="documents">
+    <div class="right">
         {% assign documents = include.collection.docs | where: "list", true %}
         {% for document in documents %}
         <div class="document">
-            <h3>{{document.title}}</h3>
+            <h4>{{document.title}}</h4>
             <span>{{document.excerpt | strip_html}}</span>
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                href="{{document.url}}">
+                onclick="location.href='{{document.url}}';">
                 Read more...
             </button>
         </div>

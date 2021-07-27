@@ -1,0 +1,7 @@
+$color-primary: rgb(63,81,181);
+$color-primary-contrast: rgb(255,255,255);
+$color-accent: rgb(255,64,129);
+$color-accent-contrast: rgb(255,255,255);
+
+$color-hue-primary: hue($color-primary);
+$color-saturation-primary: saturation($color-primary);

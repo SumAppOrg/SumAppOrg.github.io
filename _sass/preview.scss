@@ -1,28 +1,45 @@
 @import "breakpoints";
+@import "color";
 
 .preview-collection {
-    display: flex;
-    flex-direction: row;
-    padding: 64px;
-    background-color: hsl(
-        calc(var(--offset) * 255 / var(--length)),
-        50%,
-        90%
-    );
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &:nth-child(odd) {
+        background-color: hsl($color-hue-primary, $color-saturation-primary, 90%);
+    }
+    &:nth-child(even) {
+        background-color: hsl($color-hue-primary, 0%, 90%);
+    }
     @include Handset {
-        flex-direction: column;
-    }
-    .collection {
-        display: flex;
-        flex-direction: column;
-        margin-right: 64px;
-    }
-    .documents {
-        display: grid;
         grid-template-columns: 1fr;
     }
-    .document {
+    .collection {
+        position: sticky;
+        top: 0;
+        background: inherit;
         display: flex;
         flex-direction: column;
+        padding: 32px;
+    }
+    .left {
+        display: flex;
+        flex-direction: column;
+        background: inherit;
+    }
+    .right {
+        display: grid;
+        grid-template-columns: 1fr;
+        background: inherit;
+    }
+    .document {
+        position: sticky;
+        top: 0;
+        background: inherit;
+        display: flex;
+        flex-direction: column;
+        padding: 32px;
+        button {
+            margin-top: 16px;
+        }
     }
 }

@@ -7,5 +7,5 @@ style: home.css
 </div>
 {% assign home_collections = site.collections | where: "home", true %}
 {% for collection in home_collections %}
-{%- include preview.html collection=collection offset=forloop.index0 length=forloop.length -%}
+{%- include preview.html collection=collection -%}
 {% endfor %}

@@ -8,5 +8,5 @@
     display: flex;
     flex-direction: column;
     padding: 64px;
-    background-color: hsl(255, 50%, 90%);
+    background-color: hsl($color-hue-primary, $color-saturation-primary, 90%);
 }
