@@ -4,13 +4,16 @@ style: collection.css
 ---
 
 {% assign collection = site.collections | find: "label", page.collection %}
-<!--<h1>{{collection.title}}</h1>-->
+<div class="mdl-cell mdl-cell--12-col collection-intro">
+    <h1 class="animate__animated animate__fadeInDown">{{collection.title}}</h1>
+    {{content}}
+</div>
 {% assign documents = collection.docs | where: "list", true %}
 {% for document in documents %}
-<div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+<div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card animate__animated animate__delay-1s animate__slideInUp"
+    style="--animate-delay: calc({{forloop.index}} * 250ms);">
     <div class="mdl-card__media">
-        <img class="article-image" src="{{document.thumbnail | relative_url}}" border="0"
-            alt="">
+        <img class="article-image" src="{{document.thumbnail | relative_url}}" border="0" alt="">
     </div>
     <div class="mdl-card__title">
         <h2 class="mdl-card__title-text">{{document.title}}</h2>

@@ -4,6 +4,13 @@
 @import "base";
 @import "breakpoints";
 
+.collection-intro {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 .portfolio-card {
     .mdl-card__title {
         padding-bottom: 0;
