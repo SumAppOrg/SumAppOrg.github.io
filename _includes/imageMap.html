@@ -1,0 +1,12 @@
+{% assign areas = include.areas %}
+<svg class="image-map" viewBox="0 0 {{include.width}} {{include.height}}">
+    <image href="{{include.src}}"></image>
+    {% for area in areas %}
+    {% assign width = area.coord.x2 | minus: area.coord.x1 %}
+    {% assign height = area.coord.y2 | minus: area.coord.y1 %}
+    <g>
+        <rect x="{{area.coord.x1}}" y="{{area.coord.y1}}" width="{{width}}" height="{{height}}" />
+        <text x="{{area.coord.x1}}" y="{{area.coord.y1}}" class="tooltip">{{area.alt}}</text>
+    </g>
+    {% endfor %}
+</svg>

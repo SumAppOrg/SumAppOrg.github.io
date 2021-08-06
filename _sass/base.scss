@@ -5,3 +5,18 @@
     max-width: 900px;
     margin: auto;
 }
+
+.image-map {
+    rect {
+        cursor: pointer;
+        opacity: 0;
+    }
+    .tooltip {
+        display: none;
+    }
+    g:hover {
+        .tooltip {
+            display: block;
+        }
+    }
+}

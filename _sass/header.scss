@@ -22,6 +22,14 @@
         text-decoration: none;
         color: white;
     }
+    .mdl-menu__container {
+        position: fixed;
+    }
+    .mdl-button {
+        color: inherit;
+        text-transform: none;
+        font: inherit;
+    }
 }
 
 .portfolio-logo {

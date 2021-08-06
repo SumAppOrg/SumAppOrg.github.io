@@ -10,11 +10,23 @@
         <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
             <a class="mdl-navigation__link" href="/index.html">Home</a>
             {% for collection in navigation_collections %}
+            {%- if collection.menu -%}
+            <button id="menu-{{collection.label}}" class="mdl-navigation__link mdl-button mdl-js-button">
+                {{ collection.title }}
+            </button>
+            
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="menu-{{collection.label}}">
+                {% for document in collection.docs %}
+                <li class="mdl-menu__item" onclick="location.href='{{document.url}}';">{{document.title}}</li>
+                {% endfor %}
+            </ul>
+            {%- else -%}
             <a class="mdl-navigation__link" href="{{collection.label | relative_url}}">
                 {{ collection.title }}
             </a>
+            {%- endif -%}
             {% endfor %}
-            </nav>
+        </nav>
     </div>
 </header>
 <div class="mdl-layout__drawer mdl-layout--small-screen-only">

@@ -75,3 +75,8 @@ collections:
     title: Articles
     navigation: true
     home: true
+  projects:
+    output: true
+    title: Projects
+    navigation: true
+    menu: true    
