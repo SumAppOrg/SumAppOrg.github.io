@@ -6,6 +6,7 @@ imageMap:
     y1: 210 
     x2: 760
     y2: 330
+  github: https://github.com/Sum-App-Graph/sum-app-graph-ui
 ---
 
 SumApp is the next generation realtime enterprise collaboration platform. 

@@ -24,7 +24,7 @@
           {{area.excerpt | strip_html}}
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a href="{{area.url}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             Details
           </a>
         </div>
@@ -32,6 +32,11 @@
           <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
             <i class="material-icons">share</i>
           </button>
+          {% if area.imageMap.github %}
+          <a href="{{area.imageMap.github}}" target="_blank" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="fa fa-github"></i>
+          </a>
+          {% endif %}
         </div>
       </div>
 </div>
