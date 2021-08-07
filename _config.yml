@@ -79,4 +79,7 @@ collections:
     output: true
     title: Projects
     navigation: true
-    menu: true    
+    menu: true
+  sumappgraph:
+    output: true
+    title: Sum App Graph

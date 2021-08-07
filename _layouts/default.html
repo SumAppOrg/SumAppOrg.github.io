@@ -7,10 +7,12 @@ style: default.css
     <div class="mdl-card__title">
         <h1 class="animate__animated animate__fadeInDown">{{page.title}}</h1>
     </div>
+    {% if page.thumbnail %}
     <div class="mdl-card__media">
         <img src="{{page.thumbnail | relative_url}}" border="0"
         alt="">
     </div>
+    {% endif %}
     <div class="default-content">
         {{ content }}
     </div>

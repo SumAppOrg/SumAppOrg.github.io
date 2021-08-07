@@ -1,12 +1,39 @@
-{% assign areas = include.areas %}
+{% assign collection = site.collections | find: "label", include.collection %}
 <svg class="image-map" viewBox="0 0 {{include.width}} {{include.height}}">
     <image href="{{include.src}}"></image>
-    {% for area in areas %}
-    {% assign width = area.coord.x2 | minus: area.coord.x1 %}
-    {% assign height = area.coord.y2 | minus: area.coord.y1 %}
+    {% for area in collection.docs %}
+    {% assign width = area.imageMap.coord.x2 | minus: area.imageMap.coord.x1 %}
+    {% assign height = area.imageMap.coord.y2 | minus: area.imageMap.coord.y1 %}
+    {% capture id %}image-map-overlay{{forloop.index}}{% endcapture %}
     <g>
-        <rect x="{{area.coord.x1}}" y="{{area.coord.y1}}" width="{{width}}" height="{{height}}" />
-        <text x="{{area.coord.x1}}" y="{{area.coord.y1}}" class="tooltip">{{area.alt}}</text>
+      <rect x="{{area.imageMap.coord.x1}}" y="{{area.imageMap.coord.y1}}" width="{{width}}" height="{{height}}"
+        onclick="showOverlay('{{id}}');" />
+      <text x="{{area.imageMap.coord.x1}}" y="{{area.imageMap.coord.y1}}" class="tooltip">{{area.title}}</text>
     </g>
     {% endfor %}
 </svg>
+{% for area in collection.docs %}
+{% capture id %}image-map-overlay{{forloop.index}}{% endcapture %}
+<template id="{{id}}">
+<div class="image-map-overlay" onclick="hideOverlay();">
+    <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">{{area.title}}</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          {{area.excerpt | strip_html}}
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Details
+          </a>
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">share</i>
+          </button>
+        </div>
+      </div>
+</div>
+</template>
+{% endfor %}

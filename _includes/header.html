@@ -29,13 +29,31 @@
         </nav>
     </div>
 </header>
-<div class="mdl-layout__drawer mdl-layout--small-screen-only">
+<div class="mdl-layout__drawer mdl-layout--small-screen-only portfolio-drawer">
     <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
         <a class="mdl-navigation__link" href="/index.html">Home</a>
         {% for collection in navigation_collections %}
+        {%- if collection.menu -%}
+        <div class="mdl-accordion">
+            <a class="mdl-navigation__link mdl-accordion__button">
+                <i class="material-icons mdl-accordion__icon mdl-animation--default">expand_more</i>
+                {{ collection.title }}
+            </a>
+            <div class="mdl-accordion__content-wrapper">
+                <div class="mdl-accordion__content mdl-animation--default">
+                    {% for document in collection.docs %}
+                    <a class="mdl-navigation__link" href="{{document.url}}">
+                        {{ document.title }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>        
+        {%- else -%}
         <a class="mdl-navigation__link" href="{{collection.label | relative_url}}">
             {{ collection.title }}
         </a>
+        {%- endif -%}
         {% endfor %}
     </nav>
 </div>

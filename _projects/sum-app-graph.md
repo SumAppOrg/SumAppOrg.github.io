@@ -1,67 +1,8 @@
 ---
 title: Sum App Graph
-areas:
-  - coord: 
-      x1: 0 
-      y1: 210 
-      x2: 760
-      y2: 330
-    alt: User Interface Layer
-  - coord: 
-      x1: 20 
-      y1: 360 
-      x2: 740
-      y2: 420
-    alt: Gateway
-  - coord: 
-      x1: 20 
-      y1: 440 
-      x2: 230
-      y2: 520
-    alt: Federation
-  - coord: 
-      x1: 530 
-      y1: 440 
-      x2: 740
-      y2: 520
-    alt: Load Balancer
-  - coord: 
-      x1: 20 
-      y1: 570 
-      x2: 230
-      y2: 810
-    alt: Customer GraphQL
-  - coord: 
-      x1: 530 
-      y1: 570 
-      x2: 740
-      y2: 810
-    alt: Tenant GraphQL
-  - coord: 
-      x1: 250 
-      y1: 570 
-      x2: 510
-      y2: 670
-    alt: Automation
-  - coord: 
-      x1: 250 
-      y1: 710 
-      x2: 510
-      y2: 810
-    alt: Artifactory
-  - coord: 
-      x1: 0 
-      y1: 840 
-      x2: 901
-      y2: 960
-    alt: NoSQL DB
-  - coord: 
-      x1: 770 
-      y1: 210 
-      x2: 901
-      y2: 830
-    alt: Source Control
 ---
+
+{%- include imageMap.html src="/assets/images/projects/sum-app-graph-architecture.png" width=902 height=961 collection="sumappgraph" -%}
 
 ## Challenge
 ***“Without Data Standards, the Industries Don’t Go Digital”***
@@ -98,8 +39,6 @@ areas:
 
 ## The Idea
 ***“A platform that allows domain experts in organizations to model the business in a visual environment. The platform then allows them to expose the models in business applications without having to write programs.”***
-
-{%- include imageMap.html src="/assets/images/projects/sum-app-graph-architecture.png" width=902 height=961 areas=page.areas -%}
 
 ## Summary
 ***“Support customers build a shared understanding of business knowledge”***
