@@ -6,7 +6,7 @@ imageMap:
     y1: 360 
     x2: 740
     y2: 420
-  github: https://github.com/Sum-App-Graph/sum-app-graph-gateway
+  github: https://github.com/Sum-App-Graph/sum-app-graph-gateway-parent
 ---
 
 SumApp is the next generation realtime enterprise collaboration platform. 
